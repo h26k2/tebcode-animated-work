@@ -1,0 +1,359 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900');
+
+*{
+    box-sizing: border-box;
+}
+
+body , html{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+.container{
+    position: relative;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+.sub--container--one{
+    position: relative;
+    width:100%;
+    height:auto;
+    margin-top:18em;
+    opacity: 1;
+    visibility: visible;
+    animation:removeFirstAnimation 100ms ease 3000ms 1 forwards;
+}
+
+@keyframes removeFirstAnimation{
+    from{
+        opacity: 1;
+        visibility: visible;
+    }
+    to{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.content--container{
+    position: relative;
+    width:100%;
+    height:60px;
+    margin-bottom:3em;
+    animation: iconMainContainer 500ms ease 600ms 1 forwards;
+}
+
+@keyframes iconMainContainer{
+    from{
+        margin-top:0;
+    }
+    to{
+        margin-top:-2em;
+    }
+}
+
+.box--container , .text--container{
+    position: absolute;
+    height:100%;
+    top:0;
+}
+
+.box--container{
+    width:40%;
+    left:0;
+    text-align: right;
+    padding-right:0.8em;
+}
+.text--container{
+    width:60%;
+    left:40%;
+}
+
+.icon--container{
+    position: relative;
+    width:60px;
+    height:60px;
+    background:#1080f2;
+    border-radius: 50%;
+    display: inline-block;
+    top:50%;
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+    animation:iconContainer 500ms ease 0s 1 forwards;
+}
+
+@keyframes iconContainer{
+    from{
+        transform: translateY(-50%) scale(0);
+        opacity: 0;
+    }
+    
+    to{
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.icon--container > i {
+    position: absolute;
+    width:auto;
+    height:auto;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(-45deg);
+    opacity: 0;
+    color:#ffffff;
+    animation:iconRotation 500ms ease 250ms 1 forwards;
+}
+
+@keyframes iconRotation{
+    from{
+        transform:translate(-50%,-50%) rotate(-45deg);
+        opacity: 0;
+    }
+    to{
+        transform:translate(-50%,-50%) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.text--container > p {
+    position: relative;
+    top:50%;
+    transform:translateY(-50%);
+    margin:0;
+    font-family: "raleway",sans-serif;
+    font-size:2.5em;
+    font-weight: 500;
+    color:#1080f2;
+    text-shadow: 1px 1px rgba(0,0,0,0.1);
+    left:-2em;
+    opacity: 0;
+    animation:iconText 500ms ease 250ms 1 forwards;
+}
+
+@keyframes iconText{
+    from{
+        left:-2em;
+        opacity: 0;
+    }
+    to{
+        left:0em;
+        opacity: 1;
+    }
+}
+
+.text--container > p > b{
+    font-weight: 700;
+}
+
+.sub--container--two{
+    position: relative;
+    width:100%;
+    height:100%;
+    opacity: 0;    
+    visibility: hidden;    
+    animation:addSecondAnimation 100ms ease 3100ms 1 forwards;
+}
+
+@keyframes addSecondAnimation{
+    from{
+        visibility: hidden;
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.skewed--overlay--one , .skewed--overlay--two{
+    position: absolute;
+    width:40px;
+    height:0%;
+    background: dodgerblue;
+    top:0;
+    bottom:0;
+    margin:auto;
+    transform:skewX(-10deg);
+    animation:skewedFirst 500ms ease 3100ms 1 forwards,
+    skewedSecond 500ms ease 3600ms 1 forwards;
+}
+
+.skewed--overlay--one{
+    left:49%;
+}
+
+.skewed--overlay--two{
+    right:49%;
+}
+
+@keyframes skewedFirst{
+    from{
+        height:0
+    }
+    to{
+        height:100%;
+    }
+}
+
+@keyframes skewedSecond{
+    from{
+        width:40px;
+    }
+    to{
+        width:60%;
+    }
+}
+
+.main--overlay{
+    position: absolute;
+    width:20px;
+    height:0;
+    background:#1080f2;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+    animation:mainFirst 500ms ease 3400ms 1 forwards,
+    mainSecond 500ms ease 3700ms 1 forwards;
+}
+
+@keyframes mainFirst{
+    from{
+        height:0
+    }
+    to{
+        height:100%;
+    }
+}
+
+@keyframes mainSecond{
+    from{
+        width:20px;
+    }
+    to{
+        width:100%;
+    }
+}
+
+.sub--container--two h1{
+    position: absolute;
+    font-family: "raleway",sans-serif;
+    font-size:3em;
+    font-weight: 800;
+    left:50%;
+    top:99%;
+    opacity: 0;
+    transform:translate(-50%,-99%);
+    color:#ffffff;
+    animation:heroTextOne 1s ease 3300ms 1 forwards;
+}
+
+@keyframes heroTextOne{
+    from{
+        top:99%;
+        opacity: 0;
+        transform:translate(-50%,-99%);
+    }
+    to{
+        top:25%;
+        opacity: 1;
+        transform:translate(-50%,-25%);
+    }
+}
+
+.highlighted--overlay{
+    position: absolute;
+    height:80px;
+    width:0;
+    background:#ffffff;
+    left:0;
+    right:0;
+    margin:auto;
+    top:42%;
+    transform:translateY(-42%);
+    animation:heroOverlay 500ms ease 4000ms 1 forwards;
+}
+
+@keyframes heroOverlay{
+    from{
+        width:0;
+    }
+    to{
+        width:350px;
+    }
+}
+
+.sub--container--two h2{
+    font-family: "raleway",sans-serif;
+    font-size:3.5em;
+    text-transform: uppercase;
+    font-weight: 800;
+    position: absolute;
+    top:42%;
+    left:50%;
+    transform:translate(-50%,-42%);
+    margin:0;
+    color:#1080f2;
+}
+
+.sub--container--two h2 span{
+    display: inline-block;
+    position: relative;
+    top:1.5em;
+    opacity: 0;
+    animation:mainHero 500ms ease 1 forwards;
+}
+
+#ht1{
+    animation-delay: 4400ms;
+}
+
+#ht2{
+    animation-delay: 4420ms;
+}
+
+#ht3{
+    animation-delay: 4440ms;
+}
+
+#ht4{
+    animation-delay: 4460ms;
+}
+
+#ht5{
+    animation-delay: 4480ms;
+}
+
+#ht6{
+    animation-delay: 4500ms;
+}
+
+#ht7{
+    animation-delay: 4520ms;
+}
+
+#ht8{
+    animation-delay: 4540ms;
+}
+
+#ht9{
+    animation-delay: 4560ms;
+}
+
+@keyframes mainHero{
+    from{
+        top:1.5em;
+        opacity: 0;
+    }
+    to{
+        top:0;
+        opacity: 1;
+    }
+}
